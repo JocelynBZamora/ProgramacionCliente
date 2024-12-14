@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio8</title>
+    <style>
+ol{
+            border:1px solid black;
+            padding:10px;
+            margin:10px;
+            list-style-position:inside;
+            clear:both;
+        }
+        body > input[type=button]{
+            float:right;
+            margin:10px;
+        }
+        .modal /*Overlay*/{
+            background:#0000006f;
+            width:100%;
+            height:100%;
+            position:absolute;
+            top:0;
+            left:0;
+            visibility:hidden;
+        }
+            .modal form {
+                border: 1px solid black;
+                border-radius: 5px;
+                padding: 5px;
+                width: 500px;
+                position: absolute;
+                top: -100px;
+                left: 50%/*calc(50% - 250px);*/;
+                background:white;
+                transform:translate(-50%);
+                display:grid;
+                grid-template-columns:1fr 1fr;
+                gap:10px;
+                transition:all 2s;
+            }
+            .modal input[type=text]{
+                grid-column:span 2;
+            }
+            .modal.visible{
+                visibility:visible;
+            }
+            .modal.visible form{
+                top:40px;
+            }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 8. Ventanas modales</h1>
+    <!----> 
+    <input type="button" value="&plus;"/>
+    <ol id="lista">
+        <li>Alumno 1</li>
+    </ol>
+    <div class="modal">
+        <form >
+            <label >Nombre del alumno:</label>
+            <input type="text" placeholder="Agrege nomombre del alumno"/>
+            <input type="button" value="Agregar"/>
+            <input type="button" value="Cancelar"/>   
+        </form>
+    </div>
+    <script>
+        //overlay = capa que esta abajo y arriba se ve semitransparente
+        let agregar = document.querySelector("input[type=button]");
+        let modal = document.querySelector(".modal");
+        let ol = document.querySelector("ol");
+        modal.querySelector("form").addEventListener("click",
+        function(e)
+        {
+            let texto = modal.querySelector("input[type=text]");
+            if(e.target.tagName == "INPUT" && e.target.value == "Cancelar"){
+                modal.classList.toggle("visible");
+            }
+            if(e.target.tagName == "INPUT" && e.target.type == "button" && e.target.value == "Agregar"){
+                if(texto.value){
+                    let li = document.createElement("li");
+                    li.textContent = texto.value;
+                    texto.value = "";
+                    ol.append(li);
+                    modal.classList.toggle("visible");
+                }
+                else{
+                    texto.placeholder = "Ponga un nombre";
+                    
+                    
+                }
+            }
+        });
+
+        
+
+        agregar.addEventListener("click",
+        function()
+        {
+            modal.classList.toggle("visible");//alterna en agregar y eliminar
+            
+        });
+    </script>
+</body>
+</html>

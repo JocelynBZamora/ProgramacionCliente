@@ -1,0 +1,52 @@
+[
+    {
+        "Pregunta": "¿Cuál es el planeta más cercano al Sol?",
+        "Respuesta": "Mercurio",
+        "Distractores": ["Mercurio", "Venus", "Tierra", "Marte"]
+    },
+    {
+        "Pregunta": "¿Qué planeta es conocido como el planeta rojo?",
+        "Respuesta": "Marte",
+        "Distractores": ["Júpiter", "Saturno", "Venus", "Marte"]
+    },
+    {
+        "Pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+        "Respuesta": "Júpiter",
+        "Distractores": ["Júpiter", "Saturno", "Urano", "Neptuno"]
+    },
+    {
+        "Pregunta": "¿Cuál es el planeta con el día más largo en el sistema solar?",
+        "Respuesta": "Venus",
+        "Distractores": ["Venus", "Mercurio", "Tierra", "Neptuno"]
+    },
+    {
+        "Pregunta": "¿Qué planeta tiene los anillos más visibles?",
+        "Respuesta": "Saturno",
+        "Distractores": ["Saturno", "Júpiter", "Urano", "Neptuno"]
+    },
+    {
+        "Pregunta": "¿Qué planeta es conocido como el gigante helado?",
+        "Respuesta": "Urano",
+        "Distractores": ["Urano", "Neptuno", "Saturno", "Tierra"]
+    },
+    {
+        "Pregunta": "¿Qué planeta tiene más lunas conocidas?",
+        "Respuesta": "Saturno",
+        "Distractores": ["Saturno", "Júpiter", "Marte", "Urano"]
+    },
+    {
+        "Pregunta": "¿Cuál es el único planeta del sistema solar que tiene agua líquida en su superficie?",
+        "Respuesta": "Tierra",
+        "Distractores": ["Tierra", "Marte", "Venus", "Urano"]
+    },
+    {
+        "Pregunta": "¿Qué planeta tiene un gran sistema de tormentas conocido como la Gran Mancha Roja?",
+        "Respuesta": "Júpiter",
+        "Distractores": ["Júpiter", "Saturno", "Neptuno", "Venus"]
+    },
+    {
+        "Pregunta": "¿Cuál es el planeta más distante del Sol en el sistema solar?",
+        "Respuesta": "Neptuno",
+        "Distractores": ["Neptuno", "Urano", "Saturno", "Plutón"]
+    }
+]

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteo con Palillos</title>
+    <style>
+        #palillosContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .palillo-group {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Representación de Números con Palillos</h2>
+
+<!-- Entrada para el número -->
+<input type="number" id="numero" min="1" max="10" placeholder="Ingresa un número (1-10)">
+<button onclick="mostrarPalillos()">Mostrar Palillos</button>
+
+<!-- Contenedor para los palillos generados -->
+<div id="palillosContainer"></div>
+
+<script>
+function mostrarPalillos() {
+    // Obtener el número ingresado por el usuario
+    const numero = parseInt(document.getElementById('numero').value);
+    const container = document.getElementById('palillosContainer');
+    container.innerHTML = '';  // Limpiar el contenedor
+
+    // Validar que el número esté en el rango de 1 a 10
+    if (isNaN(numero) || numero < 1 || numero > 10) {
+        alert("Por favor ingresa un número entre 1 y 10.");
+        return;
+    }
+
+    // Calcular cuántos grupos de cinco y unidades necesitamos
+    const gruposDeCinco = Math.floor(numero / 5);
+    const unidades = numero % 5;
+
+    // Crear SVGs para los grupos de cinco
+    for (let i = 0; i < gruposDeCinco; i++) {
+        container.appendChild(crearGrupoPalillos(5));
+    }
+
+    // Crear SVG para las unidades restantes
+    if (unidades > 0) {
+        container.appendChild(crearGrupoPalillos(unidades));
+    }
+}
+
+function crearGrupoPalillos(cantidad) {
+    // Crear un elemento contenedor SVG para los palillos
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("width", "100");
+    svg.setAttribute("height", "100");
+    svg.classList.add("palillo-group");
+
+    // Crear los palillos verticales
+    for (let i = 0; i < cantidad; i++) {
+        const line = document.createElementNS(svgNS, "line");
+        line.setAttribute("x1", 10 + i * 20);
+        line.setAttribute("y1", 10);
+        line.setAttribute("x2", 10 + i * 20);
+        line.setAttribute("y2", 90);
+        line.setAttribute("stroke", "black");
+        line.setAttribute("stroke-width", "3");
+        svg.appendChild(line);
+    }
+
+    // Si es un grupo de cinco, agrega la línea diagonal roja
+    if (cantidad === 5) {
+        const diagonal = document.createElementNS(svgNS, "line");
+        diagonal.setAttribute("x1", 5);
+        diagonal.setAttribute("y1", 30);
+        diagonal.setAttribute("x2", 85);
+        diagonal.setAttribute("y2", 70);
+        diagonal.setAttribute("stroke", "red");
+        diagonal.setAttribute("stroke-width", "3");
+        svg.appendChild(diagonal);
+    }
+
+    return svg;
+}
+</script>
+
+</body>
+</html>

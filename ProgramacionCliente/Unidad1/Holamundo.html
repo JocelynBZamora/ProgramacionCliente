@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Hola mundo
+        // document.write("Hola Mundo");
+
+        let nombre;//es un espacio de memoria no tiene un tipo en especifico, solo guarda en un espacio de memoria
+
+       nombre  = prompt("¿Cómo te llamas?");//pregunta informacion
+
+       //4 tipos de datos 
+       //numerico
+       //texto 
+       //bool
+       //objeto
+       //null
+       document.write("Hola, "+ nombre);
+       console.log("Fin del programa "+nombre);
+
+       let semaforo = document.querySelector("#semaforo");
+ 
+ function rojo() {
+     semaforo.classList.remove("verde");
+     semaforo.classList.add("rojo");
+     setTimeout(amarillo, 10000);
+
+ }
+
+ function amarillo() {
+     semaforo.classList.remove("rojo");
+     semaforo.classList.add("amarillo");
+
+     setTimeout(verde, 5000);
+ }
+ function verde() {
+
+     semaforo.classList.remove("amarillo");
+     semaforo.classList.add("verde");
+
+     setTimeout(rojo, 15000);
+ }
+
+ rojo();
+        
+    </script>
+</body>
+</html>

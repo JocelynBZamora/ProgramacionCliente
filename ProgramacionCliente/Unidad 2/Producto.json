@@ -1,0 +1,49 @@
+const productosList = [
+    {
+        "numero":"1",
+        "descripcion": "Detergente líquido para ropa",
+        "precio": 40,
+        "image":"https://c.cdnmp.net/766288049/p/t/0/roma-detergente-liquido-charola-con-4-botellas-de-1-galon~180.jpg"
+    },
+    {
+        "numero":"2",
+        "descripcion": "Desinfectante multiusos",
+        "precio": 25,
+        "image":"https://th.bing.com/th/id/OIP.mb3DfZLBfgd92RtwOjmtqQHaLU?rs=1&pid=ImgDetMain"
+    },
+    {
+        "numero":"3",
+        "descripcion": "Paquete de esponjas",
+        "precio": 20,
+        "image":"https://th.bing.com/th/id/R.c3cc47792728868e10f6145b1988c679?rik=1O3c5Q1ezA2dUw&pid=ImgRaw&r=0"
+
+    },
+    {
+        "numero":"4",
+        "descripcion": "Limpiador de vidrios",
+        "precio": 50,
+        "image":"https://th.bing.com/th/id/OIP.2CyPRyG0i5Gx6imTUqHMYQAAAA?rs=1&pid=ImgDetMain"
+
+    },
+    {
+        "numero":"5",
+        "descripcion": "Escoba con recogedor",
+        "precio": 100,
+        "image":"https://drimjuguetes.vtexassets.com/arquivos/ids/398012/Recogedor-y-Escoba-Infantil.jpg?v=636614904291900000"
+
+    },
+    {
+        "numero":"6",
+        "descripcion": "Salsa casera",
+        "precio": 20,
+        "image":"https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750300784126L.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
+
+    },
+    {
+        "numero":"7",
+        "descripcion": "Fritos",
+        "precio": 10,
+        "image":"https://th.bing.com/th/id/R.c3cc47792728868e10f6145b1988c679?rik=1O3c5Q1ezA2dUw&pid=ImgRaw&r=0"
+
+    }
+]

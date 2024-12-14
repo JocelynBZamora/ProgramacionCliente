@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            margin: 20px auto;
+            border: 1px solid green;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 3.5rem;
+            text-align: center;
+            width: 200px;
+            background-color: green;
+        }
+        form{
+            text-align: center;
+        }
+        p{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 13. Temporizadores</h1>
+    <p id="contador">0</p>
+    <form action="">
+        <input type="button" id="interval" value="Iniciar"/>
+    </form>
+    <script>
+        let contador = 0;
+        let p = document.querySelector("p");
+        let internalID;
+        let angulo = 0;
+
+        function rotar(){
+                angulo++;
+                p.style.transform = "rotate("+ angulo +"deg)"
+                requestAnimationFrame(rotar);
+            }
+        //seInterval - realiza una accion que se ejecuta cada tiempo
+        document.querySelector("#interval").addEventListener("click",function(){
+            //requestAnimationFrame - realiza una accion cada vez que se dibuja la pantalla, 60veces por seg 
+            requestAnimationFrame(rotar);
+
+
+
+            if(!internalID){
+                internalID=   setInterval(function(){contador++;
+                       p.textContent = contador;
+                   },1000);//son dos parametros 1 que hara y el tiempo
+                   setTimeout(function(){
+                    p.style.background = "Yellow";
+                    p.style.border = "Yellow";
+                   },5000);//se cambia despues de sierto tiempo
+            }
+            else{
+                clearInterval(internalID);//detiene el timer
+                internalID = null;
+            }
+        });
+        //setTimeout - realiza un timer que se ejecuta al terminar un lapso de tiempo
+        
+    </script>
+</body>
+</html>

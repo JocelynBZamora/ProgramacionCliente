@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bokor&family=Tiny5&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: "Bokor", system-ui;
+  font-weight: 400;
+  font-style: normal;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+           
+        }
+        body{
+            grid-template-rows: auto 100fr auto ;
+            display: grid;
+        }
+        header{
+            width: 100%;
+            position: sticky;
+            
+            align-items: center;
+
+            background-color: beige;
+            text-align: center;
+        }
+        header h1{
+            background-color: beige;
+            font-size: 3rem;
+            
+        }
+       
+        main{
+            display: grid;
+            grid-template-columns: auto 70fr;
+
+        }
+        .pintores{
+            height: 73vh;
+            width: 67vw;
+            padding-left: 10vw;
+            padding-top: 5px;
+            overflow-y: scroll;
+            scrollbar-color: #fff #fff; /* color del thumb y del track */
+            scrollbar-width: thin; /* ancho de la barra de scroll */
+            scrollbar-gutter: stable; /* espacio reservado para la barra de scroll */
+            
+        }
+
+        .link{
+            width: 200px;
+            height: 270px;
+            text-align: center;
+            text-decoration: none;
+            padding-bottom: 10px;
+            display: inline-block;
+            /* display: flex; */
+            /* flex-direction: column;*/
+            justify-content: center;
+            align-items: center;  
+            padding: 5px;
+            cursor: pointer;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+             padding-bottom:5px ;  
+        }
+        .pintor{
+            text-align: center;
+            font-size: 1.3em;
+            background-color: rgba(199, 199, 199, 0.189);
+            color: #000;
+            padding: 10px;
+            font-weight: bold;
+            margin: 0;
+            justify-content: center;
+    display: grid
+;
+            /* border-radius: 5px; */
+        }
+        .pintor img{
+            width: 17vw;
+            height: 36vh;
+            justify-self: center;
+            align-self: end;
+            padding: 5%;
+        }
+        .pintor p{
+            text-align: center;
+        }
+        .nombrePintor{
+            align-self: center;
+        }
+        footer p{
+            text-align: center;
+            color: lightsteelblue;
+        }
+        
+    </style>
+    <title>Wikintores</title>
+</head>
+<body>
+    <header>
+        <h1 class="titulo">Wikintores</h1>
+
+    </header>
+    <main>
+        <div class="pintores">
+            <!-- <a href="#" class="link">
+                <img src="https://www.ttamayo.com/wp-content/uploads/2019/09/autoretrato-van_gogh-grandes-artistas.jpg" alt="#"/>
+                <p class="nombrePintor">Nombre: Vicent Van Gogh</p>
+                <p class="fechas">1853-1890</p>
+            </a> -->
+        </div>
+        <div class="pintor">
+            <img />
+            <p class="nombrePintor"></p>
+            <p class="fechas"></p>
+            <a href="#">Ver más</a>
+        </div>
+ 
+    </main>
+    <footer>
+        <p>&copy; Wikintores</p>
+    </footer>
+    <script src="Pintores.json"></script>
+    <script>
+        const pintores = document.querySelector(".pintores");
+        for (const element of pintoresList) {
+            const a = document.createElement("div");
+            a.classList = "link";
+            // a.href = "#";
+            const img = document.createElement("img");
+            img.src = element.imagen;
+            const pPintor = document.createElement("p");
+            pPintor.textContent = element.nombre;
+            const pFechas = document.createElement("p");
+            pFechas.textContent = element.anio_nacimiento+"-"+ element.anio_muerte;
+            a.dataset.id = element.numero;
+            pFechas.dataset.id =element.numero;
+            pPintor.dataset.id = element.numero;
+            img.dataset.id = element.numero;
+            console.log(pPintor);
+            a.append(img,pFechas,pPintor);
+            pintores.append(a);
+            // document.querySelector(".link img").src = element.imagen;
+        }
+        let seleccionado = pintores.firstElementChild;
+        function verPintor(){
+            let id = seleccionado.dataset.id;
+            let pintor = pintoresList.find(x => x.numero == id );
+            console.log(pintor);
+            document.querySelector(".fechas").textContent =pintor.anio_nacimiento+"-"+pintor.anio_muerte;
+            document.querySelector(".pintor img").src = pintor.imagen;
+            document.querySelector(".nombrePintor").textContent = pintor.nombre;
+            let link=document.querySelector(".pintor a");
+            link.dataset.id = pintor.numero;
+            document.querySelector(".pintor").addEventListener("click",(e)=>{
+                if(e.target.tagName == "A"){
+
+                    // console.log(link.dataset.id);
+                    sessionStorage.valor = link.dataset.id;
+                    location.href = "Pintor.html";
+                }
+            });
+
+        }
+       pintores.addEventListener("click",function(e){
+        if(e.target.tagName == "P" || e.target.tagName == "IMG" ){
+            console.log("Hila");
+            seleccionado = e.target;
+            verPintor();
+        }
+       });
+       
+    </script>
+</body>
+</html>

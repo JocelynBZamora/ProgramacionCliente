@@ -1,0 +1,102 @@
+[
+    {
+        "Pregunta": "¿En qué año comenzó la Guerra de Independencia de México?",
+        "Respuesta": "1810",
+        "Distractores": ["1810", "1821", "1808", "1824"]
+    },
+    {
+        "Pregunta": "¿Quién dio el famoso Grito de Dolores?",
+        "Respuesta": "Miguel Hidalgo",
+        "Distractores": ["Miguel Hidalgo", "José María Morelos", "Vicente Guerrero", "Agustín de Iturbide"]
+    },
+    {
+        "Pregunta": "¿En qué año se consumó la Independencia de México?",
+        "Respuesta": "1821",
+        "Distractores": ["1821", "1810", "1848", "1836"]
+    },
+    {
+        "Pregunta": "¿Qué emperador francés intentó establecer un imperio en México en el siglo XIX?",
+        "Respuesta": "Maximiliano de Habsburgo",
+        "Distractores": ["Maximiliano de Habsburgo", "Napoleón Bonaparte", "Luis XVIII", "Carlos X"]
+    },
+    {
+        "Pregunta": "¿Qué tratado marcó el fin de la guerra entre México y Estados Unidos?",
+        "Respuesta": "Tratado de Guadalupe Hidalgo",
+        "Distractores": ["Tratado de Guadalupe Hidalgo", "Plan de Iguala", "Tratado de Velasco", "Tratado de Córdoba"]
+    },
+    {
+        "Pregunta": "¿Qué presidente mexicano lideró la resistencia contra la intervención francesa?",
+        "Respuesta": "Benito Juárez",
+        "Distractores": ["Benito Juárez", "Porfirio Díaz", "Vicente Guerrero", "Francisco I. Madero"]
+    },
+    {
+        "Pregunta": "¿Qué grupo indígena fundó Tenochtitlán?",
+        "Respuesta": "Mexicas",
+        "Distractores": ["Mexicas", "Mayas", "Toltecas", "Olmecas"]
+    },
+    {
+        "Pregunta": "¿En qué año se promulgó la Constitución de México que actualmente rige?",
+        "Respuesta": "1917",
+        "Distractores": ["1917", "1857", "1824", "1929"]
+    },
+    {
+        "Pregunta": "¿Qué personaje es conocido como el 'Siervo de la Nación'?",
+        "Respuesta": "José María Morelos",
+        "Distractores": ["José María Morelos", "Miguel Hidalgo", "Vicente Guerrero", "Emiliano Zapata"]
+    },
+    {
+        "Pregunta": "¿Qué evento marcó el inicio de la Revolución Mexicana?",
+        "Respuesta": "El Plan de San Luis",
+        "Distractores": ["El Plan de San Luis", "La Decena Trágica", "El Plan de Iguala", "El Tratado de Bucareli"]
+    },
+    {
+        "Pregunta": "¿Quién lideró el movimiento revolucionario bajo el lema 'Sufragio efectivo, no reelección'?",
+        "Respuesta": "Francisco I. Madero",
+        "Distractores": ["Francisco I. Madero", "Emiliano Zapata", "Porfirio Díaz", "Venustiano Carranza"]
+    },
+    {
+        "Pregunta": "¿Qué batalla de la Revolución Mexicana es conocida como la más sangrienta?",
+        "Respuesta": "Batalla de Celaya",
+        "Distractores": ["Batalla de Celaya", "Batalla de Puebla", "Batalla de Zacatecas", "Batalla de Torreón"]
+    },
+    {
+        "Pregunta": "¿Qué tratado puso fin a la Revolución Mexicana?",
+        "Respuesta": "Tratado de Teoloyucan",
+        "Distractores": ["Tratado de Teoloyucan", "Tratado de Guadalupe Hidalgo", "Tratado de Córdoba", "Plan de Ayala"]
+    },
+    {
+        "Pregunta": "¿Qué día se celebra la independencia de México?",
+        "Respuesta": "16 de septiembre",
+        "Distractores": ["16 de septiembre", "5 de mayo", "20 de noviembre", "15 de septiembre"]
+    },
+    {
+        "Pregunta": "¿Qué presidente implementó el Porfiriato?",
+        "Respuesta": "Porfirio Díaz",
+        "Distractores": ["Porfirio Díaz", "Benito Juárez", "Francisco I. Madero", "Venustiano Carranza"]
+    },
+    {
+        "Pregunta": "¿Qué civilización construyó la pirámide de Chichén Itzá?",
+        "Respuesta": "Mayas",
+        "Distractores": ["Mayas", "Mexicas", "Toltecas", "Olmecas"]
+    },
+    {
+        "Pregunta": "¿Qué presidente mexicano expropió el petróleo en 1938?",
+        "Respuesta": "Lázaro Cárdenas",
+        "Distractores": ["Lázaro Cárdenas", "Plutarco Elías Calles", "Adolfo López Mateos", "Manuel Ávila Camacho"]
+    },
+    {
+        "Pregunta": "¿Quién fue el último emperador azteca antes de la conquista española?",
+        "Respuesta": "Cuauhtémoc",
+        "Distractores": ["Cuauhtémoc", "Moctezuma II", "Cuitláhuac", "Axayácatl"]
+    },
+    {
+        "Pregunta": "¿Qué personaje histórico es conocido por su lucha agraria con el lema 'Tierra y Libertad'?",
+        "Respuesta": "Emiliano Zapata",
+        "Distractores": ["Emiliano Zapata", "Pancho Villa", "Francisco I. Madero", "Lázaro Cárdenas"]
+    },
+    {
+        "Pregunta": "¿Qué civilización desarrolló el sistema de escritura conocido como glifos?",
+        "Respuesta": "Mayas",
+        "Distractores": ["Mayas", "Mexicas", "Zapotecas", "Olmecas"]
+    }
+]

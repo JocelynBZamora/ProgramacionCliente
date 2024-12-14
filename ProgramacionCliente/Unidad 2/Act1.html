@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendita de la esquina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #8B4513;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            margin: 20px auto;
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .products, .cart {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+
+        .products h2, .cart h2 {
+            margin-bottom: 15px;
+        }
+
+        .product-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .product-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-item button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .product-item button:hover {
+            background-color: #a65c2e;
+        }
+
+        .cart-list {
+            height: 50vh;
+            margin: 15px 0;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .cart-list-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .cart-list-item span {
+            display: inline-block;
+        }
+
+        .total {
+            margin-top: 20px;
+        }
+
+        .total p {
+            margin: 5px 0;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #a65c2e;
+        }
+        img{
+            height:100px;
+            width:100px;
+            /* background-color: #8B4513; */
+            padding: 5px;
+        }
+        p{
+            text-align: center;
+
+        }
+        #product-list{
+            cursor: pointer;
+            overflow-y: scroll;
+            height: 50vh;
+            align-items: center;
+           
+        }
+        #product-list p{
+            text-align: center;
+        }
+        #product-list .div-information{
+            display: grid;
+            grid-template-columns: auto 50fr;
+            padding: 5px;
+            border-bottom: 1px solid lightgray;
+        }
+
+        .div-list{
+            display: grid;
+            grid-template-columns: 50fr auto;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tiendita de la esquina</h1>
+    </header>
+    <div class="container">
+        <div class="products">
+            <h2>Productos</h2>
+            <div id="product-list">
+
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Carrito</h2>
+            <div class="cart-list" id="cart-list">
+            </div>
+            <div >
+                <p><strong>Subtotal:</strong> $<span id="subTotal">0</span></p>
+                <p><strong>Total:</strong> $<span id="total">0</span></p>
+            </div>
+            <input type="button" class="btn" id="btn" value="Pagar" />
+        </div>
+    </div>
+    <script src="Producto.json"></script>
+    <script>
+        const productos = document.querySelector("#product-list");
+        const information = document.querySelector(".information");
+        let lista = document.querySelector(".cart-list");
+        let totalFinal = document.querySelector("#total");
+        let subTotal = document.querySelector("#subTotal");
+        productosList.forEach(element => {
+            
+            let img = document.createElement("img");
+            img.src = element.image;
+            let p = document.createElement("p");
+            p.textContent = element.descripcion ;
+            let pPrecio = document.createElement("p");
+            pPrecio.textContent = "$"+element.precio;
+            let div = document.createElement("div");
+            let div2 = document.createElement("div");
+            div2.append(p,pPrecio);
+            div.classList.add("div-information");
+            div.append(img,div2);
+            div2.dataset.numero = element.numero;
+           img.dataset.numero = element.numero;
+           p.dataset.numero = element.numero;
+            pPrecio.dataset.numero = element.numero;
+            div.dataset.numero= element.numero;
+            productos.append(div);
+            console.log(img);
+        }); 
+        let seleccionado = productos.firstElementChild;
+        let suma = 0;
+        let sTotal = 0;
+        let total = 0;
+        
+        function addProduct(){
+            let numero = seleccionado.dataset.numero;
+            let producto = productosList.find(x => x.numero == numero );
+            console.log(producto);
+            let divProduct = document.createElement("div");
+            divProduct.classList = "div-list";
+            let p = document.createElement("p");
+            p.textContent = producto.descripcion;
+            let pPrecio = document.createElement("p");
+            pPrecio.textContent = "$"+producto.precio;
+            divProduct.append(p,pPrecio);
+            lista.append(divProduct);
+            suma = producto.precio;
+            sTotal = sTotal + suma;
+            total = (sTotal * 0.16) +  sTotal;
+            console.log(total);
+            subTotal.textContent = sTotal;
+            totalFinal.textContent = total;
+
+        }
+
+        productos.addEventListener("click",(e)=>{
+            if( e.target.tagName == "DIV" || e.target.tagName == "P" || e.target.tagName == "IMG" ){
+                if(seleccionado){
+                }
+                seleccionado=e.target;
+                addProduct();
+            }
+        });
+        document.querySelector(".btn").addEventListener("click",()=>{
+           total = 0;
+           sTotal= 0;
+           alert("Gracias por su compra");
+            totalFinal.textContent = total;
+            subTotal.textContent = sTotal;
+            lista.innerHTML = "";
+        });
+    </script>
+</body>
+
+</html>

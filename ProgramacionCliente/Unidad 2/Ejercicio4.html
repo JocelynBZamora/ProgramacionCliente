@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+       html,body{
+            background-color:lavender;
+            height:100%;
+        }
+        main{
+            height:80%;
+            display:grid;
+            grid-template-columns:75fr 25fr;/* se utiliza fr que son fracciones*/
+        }
+        div.Todos{
+            background-color:#ffffffd9;
+            flex-wrap:wrap;
+            gap:10px;
+            overflow-y:auto;
+        }
+        div.Uno{
+            display: grid;
+            grid-auto-rows: 1fr auto auto;
+        }
+        div.Uno p{
+            text-align: center;
+            font-size: 1.3em;
+            background-color: lightgray;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            margin: 0;
+            border-radius: 5px;
+        }
+        div.Uno .nombre{
+            background-color: white;
+            color: black;
+        }
+        div.Uno img{
+            justify-self: center;
+            align-self: end;
+            width: 80%;
+            height: auto;
+        }
+        img{
+            height:100px;
+            width:100px;
+        }
+        .selected{
+            filter: drop-shadow(1px 2px 3px black) drop-shadow(3px 6px 8px yellow);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="Todos">
+           
+        </div>
+        <div class="Uno">
+            <img src="#" />
+            <p class="numero"></p>
+            <p class="nombre"></p>
+        </div>
+    </main>
+    <script src="pokemon.json">
+    </script>
+    <script>
+        const lista = document.querySelector(".Todos");
+        const Uno = document.querySelector(".Uno");
+
+        for(let x of listaPokemon ){
+            let image = document.createElement("img");
+            image.src = x.imagen;
+            image.dataset.numero = x.numero;
+            lista.append(image);
+        }
+        let seleccionado = lista.firstElementChild;
+        seleccionado.classList.add("selected");
+        //Data set propiedad que tiene todas las etiquetas, se puede agg mas info "Data-[algo]"
+
+        function mostrarSeleccionado(){
+            let numero = seleccionado.dataset.numero;
+            //listaPokemon().frist(x=> x.Numero== numero)
+            let pokemon = listaPokemon.find(x => x.numero == numero);//funciona igual que fristOrDefauld
+            /*Where: filter
+            OrderBy : sort
+            Select: map
+            FirstOrDefaul:find
+            Any: some
+            All: every
+            */
+           console.log(pokemon.numero);
+           Uno.children[0].src = pokemon.imagen;
+           Uno.children[1].textContent ="No."+ pokemon.numero.toString().padStart(3,"0");
+           Uno.children[2].textContent = pokemon.nombre;
+        }
+        mostrarSeleccionado();//muestra el primero
+
+        lista.addEventListener("click",(e)=>{
+            if(e.target.tagName =="IMG"){
+                if(seleccionado){
+                    seleccionado.classList.remove("selected")
+                }
+                seleccionado=e.target;//aquien le dieron click
+                seleccionado.classList.add("selected")
+                mostrarSeleccionado();
+            }
+        });
+    </script>
+</body>
+</html>

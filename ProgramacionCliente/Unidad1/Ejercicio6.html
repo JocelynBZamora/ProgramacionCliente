@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio6</title>
+</head>
+<body>
+    <h1>Ejercicio 6. Mover nodos en DOM</h1>
+    <div>
+        <select name="" id="" size="5">
+            <option value="">Adrian</option>
+            <option value="">Berenice</option>
+            <option value="">Carlos</option>
+            <option value="">Dinorah</option>
+            <option value="">Eduardo</option>
+        </select>
+        <span>
+            <input type="button" value=">>"/>
+            <input type="button" value="<<"/>
+        </span>
+        <select name="" id="" size="5">
+
+        </select>
+    </div>
+    <style>
+        div{
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 10px;
+        }
+        span{
+            display: block;
+        }
+        </style>
+        <script>
+            let sel = document.querySelectorAll("select");//regresa ambos select
+            document.querySelector("input").addEventListener
+            ("click",function ()//funcion anonima, cuando se hace directo del listener
+            {
+                if(sel[0].selectedIndex >= 0){//si hay algo seleccionado
+                    let option = sel[0].children[sel[0].selectedIndex];//busca al hijo que esta seleccionado
+                    sel[1].append(option);
+                }
+            });
+            document.querySelector("input:nth-child(2)").addEventListener("click",function ()
+            {
+                if(sel[1].selectedIndex >= 0){//si hay algo seleccionado
+                    let option = sel[1].children[sel[1].selectedIndex];//busca al hijo que esta seleccionado
+                    sel[0].append(option);
+                }
+            });
+
+            document.querySelector("span").addEventListener("click", function (){
+                
+            });
+        </script>
+</body>
+</html>

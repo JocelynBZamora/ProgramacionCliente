@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acordeón</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+
+        .acordeon {
+            max-width: 500px;
+            margin: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            
+        }
+
+        .acordeon > div {
+            border-bottom: 1px solid #ddd;
+        }
+
+            .acordeon > div  h1 {
+               height: 20px;
+                font-size: 18px;
+                margin: 0;
+                padding: 15px;
+                background-color: #f3f3f3;
+            }
+            
+            
+            .acordeon > div p {
+                overflow: hidden;
+                height: 0px;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            .acordeon > div.seleccionado p{
+                height: 80px;
+            }
+            
+    </style>
+</head>
+<body>
+
+    <div class="acordeon">
+        <div>
+            <h1>Diseño Líquido</h1>
+            <p>El diseño líquido utiliza porcentajes en lugar de valores fijos, permitiendo que los elementos se adapten a cualquier tamaño de pantalla.</p>
+        </div>
+        <div>
+            <h1>Diseño Elástico</h1>
+            <p>El diseño elástico usa unidades relativas como "em" para que el diseño se ajuste a cambios en el tamaño de fuente, adaptándose a preferencias de usuario.</p>
+        </div>
+        <div>
+            <h1>Diseño Responsivo</h1>
+            <p>El diseño responsivo permite que el contenido se adapte a diferentes dispositivos usando puntos de ruptura, mejorando la experiencia en móviles, tabletas y escritorios.</p>
+        </div>
+        <div>
+            <h1>Diseño Fijo</h1>
+            <p>El diseño fijo establece un ancho constante en píxeles, manteniendo la estructura de la página, sin importar el tamaño de pantalla.</p>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+
+</body>
+</html>

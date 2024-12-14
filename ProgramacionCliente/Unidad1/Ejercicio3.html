@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <header>
+        <h1>Ejercicio 3. Eventos</h1>
+    </header>
+    <main>
+        <input type="text"/>
+        <input id="btn" type="button" value="Agregar"/>
+        <br/>
+        <select size="10">
+
+        </select>
+    </main>
+    <footer></footer>
+    <script>
+        //listener espera al evento y tiene que estar relacionado a ese evento
+        function crearOpcion(){
+            let btn = document.getElementById("btn");
+            let text = document.querySelector("input[type=text]");//localizar el input text
+            let valor = text.value;
+            //validar
+            if(valor == "")
+            {
+                alert("escribe un valor prro");
+                return;//termina todo
+            }
+            //se busca todos para poder agregar 
+            let select = document.querySelector("select");
+            let option = document.createElement("option");
+            //se le da el valor que tiene en el text
+            option.textContent = valor;
+            //agrega el option al select
+            select.append(option);
+            text.value = "";
+            
+        }
+         btn.addEventListener("click", crearOpcion);//agregar un evento  manda a llamar el evento que se creo en el option
+
+
+    </script>
+</body>
+</html>

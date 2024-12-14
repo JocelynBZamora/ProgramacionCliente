@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h2>Ejercicio 2. Localizando elementos en DOM</h2>
+    <ul>
+        <li class="fruta primera">Fresas</li>
+        <li>Uvas</li>
+        <li id="Naranja">Naranjas</li>
+        <li class="fruta">Mangos</li>
+    </ul>
+    <a href="#">Seleccionar</a>
+    <script>
+        //Metodos de localizacion en DOM
+        //nomenclaturade camello iniciando en minuscula
+        //getElementById
+        let naranja = document.getElementById("Naranja");
+        naranja.style.color = "orange";
+        //getElementsByName
+        let lis = document.getElementsByTagName("li");//regresa todos los elemntos = array
+        lis[1].style.color = "purple";
+        //getElementsByClassName //si tienen la misma class name se selecciona igual
+        let classfruta =  document.getElementsByClassName("fruta");
+        classfruta[0].style.color = "red";
+        //querySelector
+        let ultimo = document.querySelector("ul li:last-of-type");
+        ultimo.style.color = "yellow";
+        //queriSelectorAll
+        let todos = document.querySelectorAll("ul li");
+        todos[2].style.fontWeight = "bold";
+    </script>
+</body>
+</html>

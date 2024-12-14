@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio5</title>
+</head>
+<body>
+    <header>
+        <h1>Ejercicio 5.Eliminar nodos DOM</h1>
+    </header>
+    <main>
+        <input type="text"/> <input type="button" value="Agregar"/>
+        <ol></ol>
+        <a href="#">Limpiar</a>
+    </main>
+    <footer></footer>
+    <script>
+        //Referenciar los elementos
+        let textobox = document.querySelector("input");
+        let btn = document.querySelector("input[type=button]");
+        let ol = document.querySelector("ol");
+        let a = document.querySelector("a");
+
+        //agregar a la lista
+        function agregarLista(){
+            if(textobox.value){
+                //tenga algun valor y no este vacio
+                document.createElement("li");
+                li.textContent = textobox.value;
+                ol.append("li");
+            }
+            let cross = document.createElement("span");
+            cross.innerHTML = "&#x274c";
+            li.append(cross);
+            textobox.value = "";
+        }
+        btn.addEventListener("click", agregarLista);
+    </script>
+</body>
+</html>

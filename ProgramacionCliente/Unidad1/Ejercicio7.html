@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <style>
+        table{
+            width: 100%;
+            margin: 10px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        table th{
+            background: black;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        table td:first-child, table td:last-child{
+            width: 50px;
+        }
+        table td{
+            padding: 10px;
+            font-size: large;
+            border: 1px solid gainsboro;
+        }
+        tr.selected{
+            color: white;
+            background: blue;
+        }
+        #eliminar{
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: larger;
+            display: none;
+        }
+        tr.selected.confirmation{
+            color: white;
+            background: darkred;  
+              }
+        tr.selected #eliminar{
+            display: block;
+        }
+    </style>
+    <h1>Ejercicio 7. Agregar clases a los elementos DOM</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Num.</th>
+                <th>Nombre</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td>1</th>
+                <td>Adrian</th>
+                <td></th>
+            </tr>
+            <tr>
+                <td>2</th>
+                <td>Carlos</th>
+                <td></th>
+            </tr>
+            <tr>
+                <td>3</th>
+                <td>Daniela</th>
+                <td></th>
+            </tr>
+            <tr>
+                <td>4</th>
+                <td>Chuy</th>
+                <td></th>
+            </tr>
+            <tr>
+                <td>5</th>
+                <td>Adriana</th>
+                <td></th>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" id="eliminar">&times;</a>
+    <script>
+        let tabla = document.querySelector("tbody");
+        let anterior = document.querySelector("tr.selected");
+        let eliminar = document.getElementById("eliminar");
+
+        eliminar.addEventListener("click",function()
+        {
+           let tr= eliminar.parentElement.parentElement;
+           if(tr.classList.contains("confirmation")){
+               tr.remove();
+        }
+        else
+
+            tr.classList.add("confirmation");
+        
+           
+        });
+
+        tabla.addEventListener("click", function(e)//detecta quien origino el click, si necesita diferenciar el evento
+        {
+            if(event.target.tagName == "TD")
+            {
+               
+                if(anterior){
+                    
+                    anterior.classList.remove("selected");
+                    anterior.classList.remove("confirmation");
+
+                }
+                let tr = e.target.parentElement;
+                tr.classList.add("selected");
+                tr.lastElementChild.append(eliminar);
+
+                
+
+                anterior = tr;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin: auto;
+            display: block;
+            top: 50px;
+            font-size: 2rem;
+            border-radius: 5px;
+        }
+        
+        svg{
+            margin: auto;
+            display: block;
+
+        }
+        svg g{
+            /* transform: rotate(60deg); */
+            transition: transform 5s;
+            transform-origin: 150px 150px;
+            transition-timing-function: ease-out;
+        }
+        </style>
+</head>
+<body>
+    <h1>Ejercicio 15. Obtener elementos en cierta posición</h1>
+   
+
+    <svg id="ruleta" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <g fill="none" stroke="black" stroke-width="1">
+        <path d="M150,150 L150,10 A140,140 0 0,1 228,35 z" fill="red" />
+        <path d="M150,150 L228,35 A140,140 0 0,1 275,95 z" fill="orange" />
+        <path d="M150,150 L275,95 A140,140 0 0,1 275,205 z" fill="yellow" />
+        <path d="M150,150 L275,205 A140,140 0 0,1 228,265 z" fill="green" />
+        <path d="M150,150 L228,265 A140,140 0 0,1 150,290 z" fill="blue" />
+        <path d="M150,150 L150,290 A140,140 0 0,1 72,265 z" fill="purple" />
+        <path d="M150,150 L72,265 A140,140 0 0,1 25,205 z" fill="pink" />
+        <path d="M150,150 L25,205 A140,140 0 0,1 25,95 z" fill="cyan" />
+        <path d="M150,150 L25,95 A140,140 0 0,1 72,35 z" fill="magenta" />
+        <path d="M150,150 L72,35 A140,140 0 0,1 150,10 z" fill="lightgreen" />
+        </g>
+        <circle cx="150" cy="150" r="20" fill="black" />
+        <polygon fill="black" points="140, 0 160, 0 160, 50 170, 50 150, 70 130, 50 140,50"></polygon>
+        </svg>
+        <input type="button" value="Girar" id="girar"/>
+        <script>
+            let rueda = document.querySelector("svg g");
+            document.querySelector("#girar").addEventListener("click",
+                function(){
+                    console.log(rueda.getBoundingClientRect());
+                   let vueltas = Math.random() * 25;
+                   rueda.style.transform=`rotate(${vueltas*360}deg)`;
+                   //rueda.getBoundingClientRect()//regresa la posicion actual en la pantalla
+                 //  document.elementFromPoint()//obtiene el nodo en una posicion dada
+                }
+            );
+            rueda.addEventListener("transitionend", 
+            function(){
+                let x = rueda.getBoundingClientRect().x +150;
+                let y = rueda.getBoundingClientRect().y +70;
+
+                let obj = document.elementFromPoint(x, y);
+                alert(`Salio: `+ obj.getAttribute("fill"));
+
+            });
+        </script>
+</body>
+</html>

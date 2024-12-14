@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+    <style>
+
+        
+        html{
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            font-family: "Tiny5", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 20px auto;
+            border: 1px solid green;
+            border-radius: 5px;
+            padding: 20px;
+            font-size: 3.5rem;
+            text-align: center;
+            width: 200px;
+            background-color: green;
+            color: white;
+        }
+        form{
+            text-align: center;
+
+        }
+        input{
+            padding: 5px;
+            border-radius: 5px;
+            font-size: .8rem;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+        <p>00:00:00</p>
+    
+    <form>
+        <input type="button" value="Iniciar/Pausar"/>
+        <input type="button" value="Reiniciar"/>
+    </form>
+    <script>
+        let p =document.querySelector("p");
+        let seg = 0;
+        let min = 0 ;
+        let hr = 0;
+        let interval;
+        function iniciar(){
+         seg ++;   
+         p.textContent = seg;
+         if(seg == 60){
+             seg = 0;
+             min ++;
+             if(min == 60){
+                min =0;
+                hr++;
+             }
+            }
+            if(seg <= 9 && min <=9 && hr <=9||hr <=9 ){
+            p.textContent = "0"+hr+":0"+min+":0"+seg;
+            }
+            if( hr <=9 &&min <=9 && seg>9 ){
+             p.textContent = "0"+hr+":0"+min+":"+seg;
+            }
+            if( hr <=9 &&min >9 && seg<=9 ){
+             p.textContent = "0"+hr+":"+min+":0"+seg;
+            }
+            if(hr<=9 && min>9 && seg>9 ){
+             p.textContent = "0"+hr+":"+min+":"+seg;
+
+            }
+            if(hr>9 && min<=9 && seg<=9){
+             p.textContent = hr+":0"+min+":0"+seg;
+
+            }
+            if(hr>9 && min>9 && seg>9){
+             p.textContent = hr+":"+min+":"+seg;
+
+            }
+            
+        }
+        function reiniciar(){
+            seg = 0;
+            min = 0;
+            hr = 0;
+            p.textContent = "0"+hr+":0"+min+":0"+seg;
+
+        }
+
+        document.querySelector("form").addEventListener("click",function(e){
+            if(e.target.value== "Iniciar/Pausar"){
+                if(!interval){
+
+                    interval = setInterval(iniciar,1000);
+                }else{
+                    clearInterval(interval);
+                    interval = null;
+                }
+                }else{
+                    if(interval == null){
+
+                        reiniciar();
+                    }
+                }
+        });
+    </script>
+</body>
+</html>

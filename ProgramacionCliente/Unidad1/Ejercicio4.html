@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <header>
+        <h1>Ejercicio 4. Propagación de eventos</h1>
+    </header>
+    <body>
+        <div>
+            <input type="button" value="Botón 1"/>
+        </div>
+        <h3 id="mensaje"></h3>
+        <a href="#" id="mas">Agregar más</a>
+    </body>
+    <footer></footer>
+    <script>
+        //pasan de hijos a padres los eventos
+        //seleccionamos el boton 
+        let numero = 1;
+        function mostrarMensaje(event){
+            //parametro event que va enlasado aun lisenert, dependiendo del evento envia esa variable
+            //targt el elemento que lanzo el evento
+            if( event.target.value){//Existe ls propiedad valie en target//tagName siempre nombres en mayuscula
+                
+                let h3 = document.getElementById("mensaje");
+                h3.textContent = "Lediste click al boton "+event.target.value;
+            }
+        }
+        // let boton = document.querySelector("input[type=button]");
+        // boton.addEventListener("click",mostrarMensaje);//ejecuta el metodo = fuction
+
+        function agregarBoton(){
+            let div = document.querySelector("div");
+            let nuevo = document.createElement("input");
+            nuevo.type ="button";
+            numero++;
+            nuevo.value= "Boton "+ numero;
+            div.append(nuevo);
+            nuevo.addEventListener("click",mostrarMensaje);
+        }
+        document.getElementById("mas").addEventListener("click",agregarBoton);
+
+    </script>
+</body>
+</html>

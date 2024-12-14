@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+    <style>
+        .slides{
+            margin: 20px auto;
+            width: 800px;
+            height: 600px;
+            border: 1px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides img{
+            max-height: 100%;
+            max-width: 100%;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 100%;
+            transition:left 2s;/*cualquier img dentro de slides cuando se cambiie left va haber una transition que dure un segundo*/
+        }
+
+
+        .slides a{
+            font-size: xx-large;
+            color: black;
+            /* background-color: black; */
+            border-radius: 2em;
+            position: absolute;
+            z-index: 10;
+            padding: 10px;
+            text-decoration: none;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .slides a:last-of-type
+        {
+            right: 0;
+        }
+
+        img.entrada{/*cuadno una igm tiene entrada se mueve a 0, se empiezan a moverse poco ma poco hacia donde se le indique*/
+            left:0;
+        }
+        img.salida{
+            left: -100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio 11. Slideshow</h1>
+    <section class="slides">
+        <img src="https://i.imgflip.com/4/1pzyjd.jpg">
+        <img src="https://kirby.nintendo.com/assets/img/about/characters-kirby.png">
+        <img src="https://i.imgflip.com/4/2chr5q.jpg">
+        <img src="https://kirby.nintendo.com/assets/img/about/games-timeline-kirby-dream-buffet.png">
+        <img src="https://img.favpng.com/17/15/6/kirby-tiff-cartoon-clip-art-png-favpng-SuQxvxMJjXDjKY6B1A6Dc0FfQ_t.jpg" />
+        <a href="#" id="ant"><<</a>
+        <a href="#" id="sig">>></a>
+    </section>
+
+    <script>
+        let imgs = document.querySelectorAll(".slides img");//arreglo de todas las imagenes
+        let actual = 0;/**/
+
+        let btn = document.querySelectorAll(".slides a");
+
+        
+        function actualizarBotones(){
+            btn[0].style.display= "none";
+            btn[1].style.display= "none";
+
+            if(actual>0){
+                btn[0].style.display = null;
+            }
+            if(actual < imgs.length -1){
+                btn[1].style.display = null;
+            }
+
+        }
+
+        //llamada inicial
+        actualizarBotones();
+
+        imgs[0].classList.add("entrada");/*hacer visible la primeraa desde que comienza*/
+
+        document.querySelector(".slides").addEventListener("click", function (e)
+        {
+            if(e.target.id && e.target.id == "sig")
+            {
+                
+                imgs[actual].classList.add("salida");
+                actual++;
+                
+                imgs[actual].classList.add("entrada");
+            }
+            else if(e.target.id && e.target.id == "ant")
+            {
+                imgs[actual].classList.remove("entrada");
+                imgs[actual].classList.remove("salida");
+                actual--;
+                imgs[actual].classList.remove("salida");
+                imgs[actual].classList.add("entrada");
+            }
+
+            actualizarBotones();
+        });
+    </script>
+</body>
+</html>

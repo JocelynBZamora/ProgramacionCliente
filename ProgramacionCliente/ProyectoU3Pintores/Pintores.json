@@ -1,0 +1,149 @@
+const pintoresList  = [
+    {
+        "numero":1,
+        "nombre": "Leonardo da Vinci",
+        "anio_nacimiento": 1452,
+        "anio_muerte": 1519,
+        "imagen": "https://imgs.search.brave.com/mTz2LCICbro9z4wPptj5DONM5VbFgKEimC-fztstZdA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTE1/NTYzNDk0NS9waG90/by9sZW9uYXJkby1k/YS12aW5jaS1mb3Vu/ZC1pbi10aGUtY29s/bGVjdGlvbi1vZi1n/YWxsZXJpYS1kZWds/aS11ZmZpemktZmxv/cmVuY2UtYXJ0aXN0/LWxlb25hcmRvLmpw/Zz9zPTYxMng2MTIm/dz0wJms9MjAmYz1W/ZHZOU3p6aFhMUkRK/MjNMM1Z5OEZDRHp1/ZnlSX2kyREN5SHhH/dG1zQTJvPQ",
+        "descripcion": "Leonardo da Vinci  fue un polímata italiano del Renacimiento, reconocido como una de las figuras más destacadas y multifacéticas de la historia. Nacido en Vinci, cerca de Florencia, Leonardo destacó como pintor, científico, ingeniero, anatomista, arquitecto, músico, inventor y escritor, dejando un legado que ha influido profundamente en el arte y la ciencia.",
+        "pinturas_conocidas": [
+          "La Mona Lisa",
+          "La Última Cena",
+          "Hombre de Vitruvio."
+        ]
+      },
+      {
+        "numero":2,
+        "nombre": "Vincent van Gogh",
+        "anio_nacimiento": 1853,
+        "anio_muerte": 1890,
+        "imagen": "https://imgs.search.brave.com/KhVuUcy3wGBPmrTpgGv_4CLLy4_Os_SvvVZkC0qFCDc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvNTY0/NTc4MzAvcGhvdG8v/bmV0aGVybGFuZHMt/dmluY2VudC12YW4t/Z29naC1zZWxmLXBv/cnRyYWl0LW9pbC1v/bi1jYW52YXMtNjUt/eC01NC01LWNtLXZp/bmNlbnQtdmFuLWdv/Z2guanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPXdGUk9IZDF1/cVJ2YjhzUnlGWjJi/VW1kSFF6TjNLSVI0/S0NmbXQzV2J0RUE9",
+        "descripcion": "Vincent van Gogh fue un pintor neerlandés, considerado uno de los máximos exponentes del postimpresionismo. A pesar de que su vida estuvo marcada por dificultades personales, pobreza y problemas de salud mental, Van Gogh dejó un legado artístico inmenso, con más de 2,100 obras, entre pinturas, dibujos y bocetos, que hoy son admiradas en todo el mundo por su intensidad emocional, colorido vibrante y estilo único.Van Gogh desarrolló un estilo caracterizado por pinceladas gruesas, colores intensos y una expresión emocional que capturaba el espíritu de sus sujetos. ",
+        "pinturas_conocidas": [
+          "La noche estrellada",
+          "Los girasoles",
+          "La habitación en Arlés."
+        ]
+      },
+      {
+        "numero":3,
+        "nombre": "Pablo Picasso",
+        "anio_nacimiento": 1881,
+        "anio_muerte": 1973,
+        "imagen": "https://imgs.search.brave.com/jDaniRuED6NnU0vKbwfT-637nORBiiX_YUf_DdJ4fG8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWRzNC53aWtpYXJ0/Lm9yZy8wMDExNS9p/bWFnZXMvcGFibG8t/cGljYXNzby9pdXlx/dGV4MC5qcGVnIVBv/cnRyYWl0LmpwZWc",
+        "descripcion": "Pablo Picasso fue un artista español considerado uno de los creadores más influyentes del arte del siglo XX. Pintor, escultor, grabador, ceramista y poeta, Picasso destacó por su capacidad innovadora, su prolífica producción y su papel central en el desarrollo de movimientos artísticos como el cubismo. Su obra abarca diversos estilos y períodos, reflejando su evolución personal y las tensiones históricas y culturales de su tiempo.Su influencia trasciende generaciones, y su capacidad para reinventarse marcó un antes y un después en la historia del arte. Con más de 50,000 obras en diversos medios, su legado sigue siendo una fuente inagotable de inspiración y estudio. Su creatividad y espíritu incansable lo convierten en un símbolo de la innovación artística.",
+        "pinturas_conocidas": [
+          "Guernica",
+          "Las señoritas de Aviñón",
+          "El viejo guitarrista."
+        ]
+      },
+      {
+        "numero":4,
+        "nombre": "Claude Monet",
+        "anio_nacimiento": 1840,
+        "anio_muerte": 1926,
+        "imagen": "https://imgs.search.brave.com/eyRsn2ko55BAAoSzpIpsPE_dyPLbvdeaD5qING1UJZY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWRzMC53aWtpYXJ0/Lm9yZy8wMDExNS9p/bWFnZXMvY2xhdWRl/LW1vbmV0LzQ0MHB4/LWNsYXVkZS1tb25l/dC0xODk5LW5hZGFy/LWNyb3AuanBnIVBv/cnRyYWl0LmpwZw",
+        "descripcion": "Claude Monet  fue un pintor francés y una de las figuras más destacadas del impresionismo, un movimiento artístico que revolucionó el arte del siglo XIX. Monet es célebre por su enfoque en la luz, el color y los efectos atmosféricos, reflejados en sus paisajes y escenas de la naturaleza. Su obra influyó significativamente en el desarrollo del arte moderno y continúa siendo admirada por su belleza y técnica innovadora.Monet fue uno de los fundadores del impresionismo, cuyo nombre deriva de su pintura Impresión, sol naciente (1872). Este movimiento buscaba capturar momentos fugaces y los efectos de la luz y el color, en lugar de enfocarse en detalles precisos. Los impresionistas rompieron con las normas académicas y optaron por pintar al aire libre, explorando escenas de la vida cotidiana y la naturaleza.",
+        "pinturas_conocidas": [
+          "Impresión, sol naciente",
+          "Nenúfares",
+          "La estación de Saint-Lazare."
+        ]
+      },
+      {
+        "numero":5,
+        "nombre": "Frida Kahlo",
+        "anio_nacimiento": 1907,
+        "anio_muerte": 1954,
+        "imagen": "https://imgs.search.brave.com/fxIn-TilKzKnLfOGyDG-rNCQn_ovIKl3uIRd27u3M1A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oaXN0/b3JpYS5uYXRpb25h/bGdlb2dyYXBoaWMu/Y29tLmVzL21lZGlv/LzIwMjQvMDcvMTIv/MTMtZnJpZGEta2Fo/bG8tZ3VpbGxlcm1v/LWthaGxvLW11c2Vv/LWZyaWRhLWthaGxv/X2Y0ODliZjVhXzI0/MDcxMjEzMzQzNl84/MDB4ODAwLmpwZw",
+        "descripcion": "Frida Kahlo fue una pintora mexicana reconocida por su estilo único, cargado de simbolismo, emotividad y referencias a la cultura mexicana. Aunque inicialmente conocida como 'la esposa de Diego Rivera', Frida se estableció como una de las artistas más influyentes del siglo XX, explorando temas de identidad, feminidad, sufrimiento y resiliencia a través de su obra.Frida Kahlo desarrolló un estilo personal que combina elementos del surrealismo, el simbolismo y la tradición mexicana. Aunque a menudo se la asocia con el surrealismo, ella misma rechazaba esta etiqueta, afirmando: 'No pinto sueños, pinto mi propia realidad'.",
+        "pinturas_conocidas": [
+          "Las dos Fridas",
+          "La columna rota",
+          "Autorretrato con collar de espinas."
+        ]
+      },
+      {
+        "numero":6,
+        "nombre": "Salvador Dalí",
+        "anio_nacimiento": 1904,
+        "anio_muerte": 1989,
+        "imagen": "https://imgs.search.brave.com/UP3l6gp2iNexE12jQDP2I9k6zRx3mqmPKLgbsCA0KCc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5hZG1hZ2F6aW5l/LmNvbS9waG90b3Mv/NjE5NDk1M2YxMzIw/Njg4ZmEzMWQwMTQ5/L21hc3Rlci93XzE2/MDAsY19saW1pdC83/NjI0My5qcGc",
+        "descripcion": "Salvador Dalí fue un pintor, escultor, escritor y cineasta español, reconocido como uno de los máximos exponentes del surrealismo. Su obra se caracteriza por su imaginación desbordante, simbolismo enigmático y técnica pictórica impecable, que desafiaron las convenciones artísticas y exploraron el subconsciente humano. Además de su arte, Dalí fue una figura extravagante cuya personalidad y estilo de vida contribuyeron a su fama mundial.En la década de 1920, Dalí se unió al movimiento surrealista en París, liderado por André Breton. Este grupo buscaba explorar los sueños, el inconsciente y lo irracional a través del arte. Dalí adaptó estas ideas a su estilo único, conocido como el método paranoico-crítico, una técnica que combinaba imágenes oníricas con una precisión casi fotográfica.",
+        "pinturas_conocidas": [
+          "La persistencia de la memoria",
+          "Cisnes que se reflejan como elefantes",
+          "El gran masturbador"
+        ]
+      },
+      {
+        "numero":7,
+        "nombre": "Rembrandt van Rijn",
+        "anio_nacimiento": 1606,
+        "anio_muerte": 1669,
+        "imagen": "https://imgs.search.brave.com/D_Jp2_tOPC_MBjaP2iSixtisnPKYgZmnKh07_MrlEL0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWRzMS53aWtpYXJ0/Lm9yZy9pbWFnZXMv/cmVtYnJhbmR0Lmpw/ZyFQb3J0cmFpdC5q/cGc",
+        "descripcion": "Rembrandt fue un pintor y grabador neerlandés, ampliamente considerado uno de los mayores maestros del arte barroco y uno de los artistas más importantes de la historia. Reconocido por su capacidad para capturar la humanidad y la emoción en sus retratos, escenas bíblicas y paisajes, Rembrandt destacó por su maestría en el uso del claroscuro y su enfoque introspectivo.Rembrandt murió en 1669 en Ámsterdam, dejando un legado artístico que ha influido profundamente en generaciones posteriores. Su habilidad para plasmar la condición humana, su uso magistral de la luz y su enfoque emocional lo convierten en una figura central en la historia del arte occidental.Hoy, muchas de sus obras se exhiben en museos de renombre mundial, como el Rijksmuseum de Ámsterdam. Rembrandt sigue siendo un símbolo de la excelencia artística y un ejemplo de cómo el arte puede trascender épocas y culturas.",
+        "pinturas_conocidas": [
+          "La ronda de noche",
+          "Autorretrato con dos círculos",
+          "Lección de anatomía del Dr. Nicolaes Tulp."
+        ]
+      },
+      {
+        "numero":8,
+        "nombre": "Michelangelo Buonarroti",
+        "anio_nacimiento": 1475,
+        "anio_muerte": 1564,
+        "imagen": "https://imgs.search.brave.com/BdEh1O3d8raEUYmECS77QGBnE9a1TK0LB7wPLXCIDHY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9oaXBz/LmhlYXJzdGFwcHMu/Y29tL2htZy1wcm9k/L2ltYWdlcy9taWNo/ZWxhbmdlbG8tYnVv/bmFycm90aS0xNDc0/LS0tMTU2My1jaXJj/YS0xNTI1LW9yaWdp/bmFsLXB1YmxpY2F0/aW9uLXBlb3BsZS1k/aXNjLS0taGEwNDIw/LXBob3RvLWJ5LWh1/bHRvbi1hcmNoaXZl/X2dldHR5LWltYWdl/cy5qcGc_Y3JvcD0x/eHc6MS4weGg7Y2Vu/dGVyLHRvcCZyZXNp/emU9NjQwOio",
+        "descripcion": "Michelangelo fue un escultor, pintor, arquitecto y poeta italiano, considerado una de las figuras más importantes del Renacimiento. Su habilidad para capturar la belleza y el drama del cuerpo humano y su extraordinario talento en múltiples disciplinas lo convirtieron en un modelo de genio artístico. Michelangelo dejó un legado monumental que incluye algunas de las obras más célebres de la historia del arte.Michelangelo murió en Roma en 1564, a los 88 años, dejando un legado artístico que transformó el Renacimiento y marcó el inicio del manierismo. Su impacto en la historia del arte es incalculable, y sus obras siguen siendo símbolos de la genialidad humana y del poder del arte para trascender el tiempo.",
+        "pinturas_conocidas": [
+          "La creación de Adán",
+          "El Juicio Final",
+          "La Virgen de Manchester."
+        ]
+      },
+      {
+        "numero":9,
+        "nombre": "Georgia O'Keeffe",
+        "anio_nacimiento": 1887,
+        "anio_muerte": 1986,
+        "imagen": "https://imgs.search.brave.com/psEElf6_DH_hVCZgIGzneyD4dH-ZyaYwkMJhOwve_pc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTMz/ODY2MTY4NS9waG90/by9nZW9yZ2lhLW9r/ZWVmZmUtMTkyMi1h/LXdvcmstbWFkZS1v/Zi1nZWxhdGluLXNp/bHZlci1wcmludC1h/cnRpc3QtYWxmcmVk/LXN0aWVnbGl0ei5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/a25aRTFONEw3MTZz/OE1VVWpaSUpYTkRT/aTN3V1FwSU10bHFa/ekQ1eGVudz0",
+        "descripcion": "Georgia O'Keeffe  fue una pintora estadounidense conocida como la 'Madre del modernismo estadounidense'. Su obra se caracteriza por su enfoque innovador, con formas simplificadas y abstractas que exploran la naturaleza, los paisajes y temas como las flores y los huesos. Su estilo personal y su dedicación a su arte la convirtieron en una figura fundamental del arte moderno en Estados Unidos.O'Keeffe desarrolló un estilo distintivo que fusionaba la abstracción y el realismo, inspirándose en la naturaleza y el entorno que la rodeaba.",
+        "pinturas_conocidas": [
+          "Jimson Weed",
+          "Blue and Green Music",
+          "Black Iris."
+        ]
+      },
+      {
+        "numero":10,
+        "nombre": "Diego Velázquez",
+        "anio_nacimiento": 1599,
+        "anio_muerte": 1660,
+        "imagen": "https://imgs.search.brave.com/W-zyKj40x5EL6bEr2omW9F_zohOL8K1KfuGA73mp4v8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/Y3VsdHVyYWdlbmlh/bC5jb20vZXMvaW1h/Z2VuZXMvdmVsYXpx/dWV6LWF1dG9wb3J0/cmFpdC0xNjQwLTE2/NTAtNTMwODc0My1j/a2UuanBnP2NsYXNz/PWFydGljbGU",
+        "descripcion": "Diego Velázquez fue un pintor español del Siglo de Oro, reconocido como uno de los mayores exponentes del arte barroco. Su maestría en el retrato, el uso innovador de la luz y la composición, y su capacidad para capturar la esencia de sus sujetos lo convierten en una figura central en la historia del arte. Velázquez fue pintor de la corte del rey Felipe IV de España y dejó un legado de obras que trascienden su época.Velázquez fue un innovador en el uso de la luz, la perspectiva y la composición. Su estilo evolucionó del tenebrismo a un enfoque más suelto y atmosférico, con pinceladas que sugerían detalles sin definirlos completamente. Esta técnica, conocida como pintura abocetada, influyó en artistas posteriores, como los impresionistas.Además, Velázquez mostró un interés profundo en la humanidad de sus sujetos, capturando sus emociones y personalidades con una precisión única. Su habilidad para plasmar la textura, la piel y los materiales lo distingue entre sus contemporáneos.",
+        "pinturas_conocidas": [
+          "Las Meninas",
+          "La rendición de Breda",
+          "El triunfo de Baco."
+        ]
+      },
+      {
+        "numero":11,
+        "nombre": "Henri Matisse",
+        "anio_nacimiento": 1869,
+        "anio_muerte": 1954,
+        "imagen": "https://imgs.search.brave.com/f6ZHKecSd78ccZCa4H-BEpH9IiDz1fqE3aplo_W_24c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQy/MjEwMzc4Ni9waG90/by90aGUtZnJlbmNo/LWFydGlzdC1oZW5y/aS1tYXRpc3NlLWFi/b3V0LTE5NTAuanBn/P3M9NjEyeDYxMiZ3/PTAmaz0yMCZjPTh0/amVsRnVYbFIzNjM5/OW5fV2JOR3BpZ1JT/aEhDWG5kVDF4NVQ1/eWl5WGs9",
+        "descripcion": "Henri Matisse fue un pintor, escultor y grabador francés, ampliamente reconocido como uno de los artistas más importantes del siglo XX y uno de los fundadores del fauvismo, un movimiento artístico caracterizado por el uso de colores vibrantes y una fuerte expresión emocional. Matisse fue un innovador en el campo del arte moderno y su trabajo abarca una amplia gama de estilos, desde el figurativo hasta la abstracción.Matisse es conocido principalmente por ser uno de los principales impulsores del fauvismo, un movimiento que surgió en 1905. Los fauvistas se caracterizaban por el uso de colores brillantes y no naturalistas, y por aplicar los colores de forma simbólica en lugar de realista. Matisse usó el color de manera expresiva, dando libertad a su paleta para crear sensaciones emocionales y atmosféricas.",
+        "pinturas_conocidas": [
+          "La danza",
+          "La alegría de vivir",
+          "Mujer con sombrero."
+        ]
+      }
+      
+    ]
+  
+
+  
